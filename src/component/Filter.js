@@ -28,6 +28,7 @@ const Filter = ({getInput}) => {
                 placeholder="Title or Rate" 
             />
             <StarRatingComponent 
+                className="search"
                 name="rate" 
                 starCount={5}
                 value={rate}

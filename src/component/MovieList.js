@@ -2,6 +2,8 @@ import React,{useState,useEffect} from 'react'
 import MovieCard from "./MovieCard" ;
 import ModalInput from './ModalInput'
 import Filter from './Filter'
+import Trailer from './Trailer'
+import { BrowserRouter, Route } from 'react-router-dom';
 
 const MovieList = (props) => {
     const [newMovies, setNewMovies] = useState(props.movies)
@@ -31,6 +33,9 @@ const MovieList = (props) => {
 
     return (
         <div>
+            <BrowserRouter>
+                <Route path='/movies/:id' render={(props) => <Trailer {...props} filteredList={filteredList } />} />
+
             <div style={{display:'flex' }}>
             <ModalInput callBack={callBack} />
             <Filter getInput={getInput} />
@@ -41,6 +46,7 @@ const MovieList = (props) => {
                 }
                 )}
             </div>
+            </BrowserRouter>
         </div>
     )
 }

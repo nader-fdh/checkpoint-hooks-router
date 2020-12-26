@@ -3,6 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Modal from '@material-ui/core/Modal';
 import { Button } from 'react-bootstrap';
 import "./ModalInput.css";
+import { v4 as uuidv4 } from 'uuid';
 
 function getModalStyle() {
   const top = 45;
@@ -30,10 +31,12 @@ function ModalInput({callBack}) {
   const [modalStyle] = React.useState(getModalStyle);
   const [open, setOpen] = React.useState(false);
     const [inputValue, setInputValue] = useState({
+        id: uuidv4(),
         title:'',
         rate:'',
         description:'',
-        posterurl:''
+        posterurl:'',
+        trailer:"",
     })
   const handleOpen = () => {
     setOpen(true);
@@ -58,6 +61,7 @@ function ModalInput({callBack}) {
           <input className='input' type='text' name='rate' value={inputValue.rate} onChange={handleSubmit} placeholder='Rating' />
           <input className='input' type='text' name='description' value={inputValue.description} onChange={handleSubmit} placeholder='description' />
           <input className='input' type='text' name='posterurl' value={inputValue.posterurl} onChange={handleSubmit} placeholder='Image' />
+          <input className='input' type='text' name='trailer' value={inputValue.trailer} onChange={handleSubmit} placeholder='trailer' />
           <span onClick={()=>setOpen(false)}>
               <button className='btn' type='submit' onClick={()=> callBack(inputValue)} >submit</button>
             </span>
