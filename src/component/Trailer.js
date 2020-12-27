@@ -1,4 +1,5 @@
 import React from 'react'
+import "./Trailer.css";
 
 const Trailer = ({filteredList,match}) => {
   
@@ -12,9 +13,9 @@ const Trailer = ({filteredList,match}) => {
     } 
     
     return (
-        <div>
-           
-            <p>{show} </p>
+        <div className="trailer" >
+
+            <p>{show}</p>
             {video}
         </div>
     )

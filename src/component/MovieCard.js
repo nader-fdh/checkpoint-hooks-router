@@ -2,7 +2,7 @@ import React from "react";
 import "./MovieCard.css";
 import StarRatingComponent from "react-star-rating-component";
 import { Link } from "react-router-dom";
-import { v4 as uuidv4 } from 'uuid';
+
 
 
 
@@ -25,7 +25,7 @@ const MovieCard = (props) => {
             value={props.el.rate}
           />
         </h2>
-        <p>{props.el.description}</p>
+      
         <Link to={`/movies/${props.el.id}`}>
         <button>Watch Trailer</button>
         </Link>

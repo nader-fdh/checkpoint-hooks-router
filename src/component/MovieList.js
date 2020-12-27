@@ -34,7 +34,7 @@ const MovieList = (props) => {
     return (
         <div>
             <BrowserRouter>
-                <Route path='/movies/:id' render={(props) => <Trailer {...props} filteredList={filteredList } />} />
+                
 
             <div style={{display:'flex' }}>
             <ModalInput callBack={callBack} />
@@ -46,6 +46,7 @@ const MovieList = (props) => {
                 }
                 )}
             </div>
+            <Route path='/movies/:id' render={(props) => <Trailer {...props} filteredList={filteredList } />} />
             </BrowserRouter>
         </div>
     )
